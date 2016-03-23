@@ -1,0 +1,2 @@
+# haskellfun
+exercising on haskell
