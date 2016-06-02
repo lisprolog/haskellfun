@@ -1,2 +1,2 @@
 # haskellfun
-exercising on haskell
+Reading the book "Real World Haskell" and writing code.
