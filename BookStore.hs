@@ -1,15 +1,12 @@
---BookStore.hs
+-- file: ch03/BookStore.hs
+-- We will introduce the CustomerID type shortly.
 
-data BookInfo = Book Int String [String]
+data BookInfo = Book Int String[String]
 		deriving (Show)
-
-data MagazineInfo = 	Magazine Int String [String]
-			deriving (Show)
-
-myInfo  = Book 9780135072455 	"Algebra of Programming" 	["Richard Bird", "Oege de Moor"]
-myInfo2 = Book 	0 		"The Book of Imaginary Beings"	["Jorge Luis Borges"]
-myInfo3 = Book 	1 		"Cosmicomics"			["Italo Calvino"]
-cities	= Book	173		"Use of Weapons"		["Iain M Banks"]
+data MagazineInfo = Magazine Int String[String]
+		deriving (Show)
+myInfo = Book 9780135072455 "Algebra of Programming" 
+		["Richard Bird", "Oege de Moor"]
 
 data BookReview = BookReview BookInfo CustomerID String
 
@@ -19,42 +16,35 @@ type ReviewBody = String
 data BetterReview = BetterReview BookInfo CustomerID ReviewBody
 
 type BookRecord = (BookInfo, BookReview)
+
 type CardHolder = String
 type CardNumber = String
 type Address = [String]
 
 data BillingInfo = CreditCard CardNumber CardHolder Address
-		|CashOnDelivery
-		|Invoice CustomerID
-		deriving (Show)
+		| CashOnDelivery
+		| Invoice CustomerID
+		  deriving (Show)
 
-myInfo5 = Book 2 "The Wealth of Networks" ["Yochai Benkler"]
-
-creditCard1 = CreditCard "2901650221064486" "Thomas Gradgrind" ["Dickens", "England"]
-
-bookId		(Book id title authors) = id
-bookTitle	(Book id title authors) = title
-bookAuthors	(Book id title authors) = authors
-
-nicerID		(Book id _	_	) = id
-nicerTitle	(Book _	title 	_	) = title
-nicerAuthors	(Book _ _ 	authors	) = authors
+bookID (Book id title authors) = id
+bookTitle (Book id title authors) = title
+bookAuthor(Book id title authors) = authors
 
 data Customer = Customer{
-	  customerID	:: CustomerID
-	, customerName	:: String
-	, customerAddress::Address
-	} deriving (Show)
+	 customerID	 :: CustomerID
+	,customerName	 :: String
+	,customerAddress :: Address
+} deriving (Show)
 
-customer1 = Customer 271828 "J.R. Hacker"
-		["255 Syntax Ct",
-		 "Milpitas, CA 95132",
-		 "USA"]
+customer1 = Customer 271828 "J. R. Hacker"
+	["255 Syntax Ct",
+	"Milpitas, CA 95134",
+	"USA"]
 
-customer2 = 	Customer{
-		  customerID = 271828
-		, customerAddress = [	"1048576 Disk Drive",
-					"Milpitas, CA 95134",
-					"USA"]
-		, customerName = "Jane Q. Citizen"
-		}
+customer2 = Customer{
+	customerID = 271828
+	,customerAddress = [	"1048576 Disk Drive",
+				"Milpitas, CA 95134",
+				"USA"]
+	,customerName = "Jane Q Citizen"
+	}

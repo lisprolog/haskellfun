@@ -1,0 +1,1 @@
+intersperse :: a -> [[a]] -> [a]

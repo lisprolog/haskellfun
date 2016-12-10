@@ -1,8 +1,8 @@
---GoodIndent.hs
+-- file: ch03/GoodIndent.hs
+-- This is the lefmost column.
 
---lefmost column
-  --top-level declarations start in any column
-  firstGoodIndentation = 1
+	-- It's fine for top-level declarations to start in any column...
+	firstGoodIndentation = 1
 
-  --second
-  secondGoodIndentation = 2
+	-- ...provided all subsequent declarations do, too!
+	secondGoodIndentation = 2

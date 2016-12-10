@@ -1,9 +1,7 @@
---BadIndent.hs
+-- This is the leftmost column.
 
---lefmost column
+		-- Our first declaration is in column 4.
+		firstBadIndentation = 1
 
-    --first declaration in column 4
-    firstBadIndentation = 1
-
-  --this is illegal
-  secondBadIndentation = 2
+	--Our second is left ot the first, which is illegal!
+	secondBadIndentation = 2
